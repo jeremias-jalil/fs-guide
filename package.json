@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jeremias-jalil.github.io/fs-guide/",
   "dependencies": {
     "@ashwamegh/react-link-preview": "^0.2.2",
     "@dhaiwat10/react-link-preview": "^1.7.2",
@@ -22,6 +23,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
