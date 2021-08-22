@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/fs-guide/home/static/css/main.e1ca1b37.chunk.css",
-    "main.js": "/fs-guide/home/static/js/main.2feb07db.chunk.js",
-    "main.js.map": "/fs-guide/home/static/js/main.2feb07db.chunk.js.map",
-    "runtime-main.js": "/fs-guide/home/static/js/runtime-main.1ac8e66c.js",
-    "runtime-main.js.map": "/fs-guide/home/static/js/runtime-main.1ac8e66c.js.map",
-    "static/js/2.5c18408d.chunk.js": "/fs-guide/home/static/js/2.5c18408d.chunk.js",
-    "static/js/2.5c18408d.chunk.js.map": "/fs-guide/home/static/js/2.5c18408d.chunk.js.map",
-    "static/js/3.68780f70.chunk.js": "/fs-guide/home/static/js/3.68780f70.chunk.js",
-    "static/js/3.68780f70.chunk.js.map": "/fs-guide/home/static/js/3.68780f70.chunk.js.map",
-    "index.html": "/fs-guide/home/index.html",
-    "static/css/main.e1ca1b37.chunk.css.map": "/fs-guide/home/static/css/main.e1ca1b37.chunk.css.map",
-    "static/js/2.5c18408d.chunk.js.LICENSE.txt": "/fs-guide/home/static/js/2.5c18408d.chunk.js.LICENSE.txt",
-    "static/media/logo-blanco.0b476479.png": "/fs-guide/home/static/media/logo-blanco.0b476479.png",
-    "static/media/logo-oscuro.e7f8c206.png": "/fs-guide/home/static/media/logo-oscuro.e7f8c206.png"
+    "main.css": "/fs-guide/static/css/main.e1ca1b37.chunk.css",
+    "main.js": "/fs-guide/static/js/main.2feb07db.chunk.js",
+    "main.js.map": "/fs-guide/static/js/main.2feb07db.chunk.js.map",
+    "runtime-main.js": "/fs-guide/static/js/runtime-main.ccbda05a.js",
+    "runtime-main.js.map": "/fs-guide/static/js/runtime-main.ccbda05a.js.map",
+    "static/js/2.af1e0b96.chunk.js": "/fs-guide/static/js/2.af1e0b96.chunk.js",
+    "static/js/2.af1e0b96.chunk.js.map": "/fs-guide/static/js/2.af1e0b96.chunk.js.map",
+    "static/js/3.68780f70.chunk.js": "/fs-guide/static/js/3.68780f70.chunk.js",
+    "static/js/3.68780f70.chunk.js.map": "/fs-guide/static/js/3.68780f70.chunk.js.map",
+    "index.html": "/fs-guide/index.html",
+    "static/css/main.e1ca1b37.chunk.css.map": "/fs-guide/static/css/main.e1ca1b37.chunk.css.map",
+    "static/js/2.af1e0b96.chunk.js.LICENSE.txt": "/fs-guide/static/js/2.af1e0b96.chunk.js.LICENSE.txt",
+    "static/media/logo-blanco.0b476479.png": "/fs-guide/static/media/logo-blanco.0b476479.png",
+    "static/media/logo-oscuro.e7f8c206.png": "/fs-guide/static/media/logo-oscuro.e7f8c206.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ac8e66c.js",
-    "static/js/2.5c18408d.chunk.js",
+    "static/js/runtime-main.ccbda05a.js",
+    "static/js/2.af1e0b96.chunk.js",
     "static/css/main.e1ca1b37.chunk.css",
     "static/js/main.2feb07db.chunk.js"
   ]
