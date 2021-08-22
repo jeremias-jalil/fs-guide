@@ -4,7 +4,7 @@ require('dotenv').config()
 const BACK_SERVER = process.env.REACT_APP_BACK_SERVER
 
 export async function getAllCategorys() {
-    console.log(BACK_SERVER)
+
     try {
         const category = await axios.get(`${BACK_SERVER}/category`)
         return category.data

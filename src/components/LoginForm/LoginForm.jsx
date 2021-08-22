@@ -5,8 +5,8 @@ import { useHistory } from 'react-router'
 
 export default function LoginForm() {
     const history = useHistory()
-    const { authorization, userAcces } = useAppContext()
-    console.log(userAcces)
+    const { authorization } = useAppContext()
+
     const [fail, setFail] = useState(false)
 
     async function login(e) {

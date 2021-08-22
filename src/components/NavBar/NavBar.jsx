@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router'
 import logo from '../../logo-oscuro.png'
 
-export default function NavBar({ search, reload }) {
+export default function NavBar({ reload }) {
 
     const [searchInput, setSearchInput] = useState('')
     const history = useHistory()
