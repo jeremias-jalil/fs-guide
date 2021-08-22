@@ -10,7 +10,7 @@ require('dotenv').config()
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AppContextProvider>
+      <AppContextProvider basename="/fs-guide">
         <App />
       </AppContextProvider>
     </BrowserRouter>
