@@ -1,0 +1,36 @@
+.container {
+
+  display: grid; 
+  min-height: 100vh;
+    grid-template-columns: 0.4fr 1.6fr; 
+    grid-template-rows: 10vh auto 20vh; 
+    gap: 20px 20px ; 
+    grid-template-areas: 
+      "nav nav"
+      "filter body"
+      "foot foot"; 
+  }
+  .nav { 
+    grid-area: nav; 
+    position: fixed  ;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .filter { grid-area: filter; }
+  .body { grid-area: body; }
+  .foot { grid-area: foot; }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 0fr 1fr; }
+
+      .filter { 
+        margin-top: 1vh;
+        position: fixed  ;
+        z-index: 15; }
+        .nav {
+          background-color: #F8F9FA;
+          padding-left: 15vw;
+        }
+  }

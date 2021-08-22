@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.reference{
+  margin: 10px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 10px 10px; 
+}
+
+.card{
+  margin: 5px;
+}
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.ok:hover{
+  color: green;
+}
+.noOk:hover{
+  color: red;
+}
+
+.github:hover{
+  color:royalblue
+}
+
+.content{
+  margin: 20px;
+}
+
+.aport{
+  margin: 20px
+}
+
+.footer{
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+.logoFoot{
+  width: 100px;
+}
+
+.logoNav{
+  width: 50px;
+}
+
+.login{
+  background-color:darkslategray;
+}
+
