@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jeremias-jalil.github.io/fs-guide/home",
+  "homepage": "https://jeremias-jalil.github.io/fs-guide",
   "dependencies": {
     "@ashwamegh/react-link-preview": "^0.2.2",
     "@dhaiwat10/react-link-preview": "^1.7.2",

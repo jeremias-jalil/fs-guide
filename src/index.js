@@ -8,13 +8,13 @@ import { AppContextProvider} from './context/context'
 require('dotenv').config()
 
 ReactDOM.render(
-  <React.StrictMode>
+
     <BrowserRouter basename="/fs-guide">
       <AppContextProvider >
         <App />
       </AppContextProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
+
   document.getElementById('root')
 );
 

@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       <Redirect from="/" to="/home" />
-      <Route exact path='/home' component={Home} />
-      <Route exact path='/home/:search' component={Home} />
-      <Route exact path='/newreference' component={NewReference} />
-      <Route exact path='/admin' component={Admin} />
-      <Route exact path='/login' component={Login} />
+      <Route  path='/home' component={Home} />
+      <Route  path='/home/:search' component={Home} />
+      <Route  path='/newreference' component={NewReference} />
+      <Route  path='/admin' component={Admin} />
+      <Route  path='/login' component={Login} />
     </>
   );
 }
