@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 function App() {
   return (
     <>
+      <Redirect from="/" to="/home" />
       <Route exact path='/home' component={Home} />
       <Route exact path='/home/:search' component={Home} />
       <Route exact path='/newreference' component={NewReference} />
