@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { useAppContext } from '../../context/context';
-import LinkPrev from '../LinkPrev/LinkPrev';
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import LinkPrev from '../LinkPrev/LinkPrev';
+import { useAppContext } from '../../context/context';
+import loadingGif from '../../loading.gif'
 import { updateReference } from '../../functions/api';
 import Empti from '../Empti/Empti';
 
-export default function Body({ filter, filterItem, references, reload }) {
+export default function Body({ filter, filterItem, references }) {
 
     const [currentList, setCurrentList] = useState([])
-    const { userAcces } = useAppContext()
+    const { userAcces, load, reload } = useAppContext()
 
     useEffect(() => {
         if (filter) {
@@ -21,7 +21,7 @@ export default function Body({ filter, filterItem, references, reload }) {
             setCurrentList(references)
         }
         // eslint-disable-next-line
-    }, [filter, references])
+    }, [filter, references, load])
 
     function acept(id) {
         updateReference({ "public": 'acept' }, id, userAcces)
@@ -36,7 +36,9 @@ export default function Body({ filter, filterItem, references, reload }) {
     return (
         <div className="container">
             <h1>{filter?.name}</h1>
-            {!currentList.length? <Empti/> :
+            {load? 
+            <img src={loadingGif}  class="rounded mx-auto d-block"/>
+            :!currentList.length? <Empti/> :
             <div className="row">
                 {currentList.map(ref =>
                     <div className="col-12">

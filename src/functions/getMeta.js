@@ -1,3 +1,5 @@
+import logo from '../logo-oscuro.png'
+
 const isValidUrl = (url) => {
     const regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
     const validUrl = regex.test(url)
@@ -19,6 +21,9 @@ export async function fetchData(url) {
             body: JSON.stringify({ url })
         })
         const data = await response.json()
+        if(!data.img){
+            data.img=logo
+        }
         return (data)
     }
     else {

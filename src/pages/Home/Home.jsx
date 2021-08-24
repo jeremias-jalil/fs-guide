@@ -11,7 +11,7 @@ export default function Home() {
     const [items, setItems] = useState([])
     const [subcategory, setSubcategory] = useState(null)
 
-    const { categorys, search, load } = useAppContext()
+    const { categorys, search,reload } = useAppContext()
    
     useEffect(() => {
         if (search.length) {
@@ -20,11 +20,13 @@ export default function Home() {
             getApi()
         }
     }// eslint-disable-next-line
-        , [search, load])
+        , [search])
 
     async function getApi() {
+        reload(true)
         const references = await getAllReferences()
         setItems(references)
+        reload(false)
     }
 
     function filterBySubcategoryId(id) {
@@ -32,9 +34,10 @@ export default function Home() {
     }
 
     async function searchByName(search) {
-        console.log(search)
+        reload(true)
         const searchResult = await searchByNameApi(search)
         setItems(searchResult)
+        reload(false)
 
     }
 

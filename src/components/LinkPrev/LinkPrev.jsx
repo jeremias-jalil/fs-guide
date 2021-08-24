@@ -1,6 +1,5 @@
 import React from 'react'
 import loadingGif from '../../loading.gif'
-import logo from '../../logo-oscuro.png'
 
 export default function LinkPrev({ img, title, description, url }) {
 
@@ -8,7 +7,7 @@ export default function LinkPrev({ img, title, description, url }) {
         <div className="card">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={!img.length ? loadingGif : img || logo} className="card-img-top" alt={title} onClick={() => { window.open(url, '_blank') }} />
+                    <img src={!img.length ? loadingGif : img} className="card-img-top" alt={title} onClick={() => { window.open(url, '_blank') }} />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">

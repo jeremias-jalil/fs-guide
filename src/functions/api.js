@@ -3,6 +3,7 @@ import axios from 'axios'
 require('dotenv').config()
 const BACK_SERVER = process.env.REACT_APP_BACK_SERVER
 
+
 export async function getAllCategorys() {
 
     try {

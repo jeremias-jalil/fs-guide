@@ -25,15 +25,20 @@ export function AppContextProvider(props) {
 
     function getSearch(data) {
         setSearch(data)
-        
+
     }
 
     function resetSearch() {
         setSearch('')
     }
 
-    function reload() {
-        setLoad(!load)
+    function reload(value) {
+        if (value) {
+            setLoad(value)
+        } else {
+            setLoad(!load)
+        }
+
     }
 
 
