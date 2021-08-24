@@ -13,7 +13,6 @@ export default function LoginForm() {
         e.preventDefault()
         try {
             const acces = await loginUser({ email: e.target[0].value, password: e.target[1].value })
-            console.log(acces, 'acces')
             authorization(acces.data.token)
             history.push('/admin')
         } catch (err) {

@@ -4,27 +4,23 @@ import NavBar from '../../components/NavBar/NavBar'
 import FiltaerBar from '../../components/FilterBar/FiltaerBar'
 import Body from '../../components/Body/Body'
 import {getAllReferences, searchByNameApi } from '../../functions/api'
-import { useParams } from 'react-router-dom'
 import { useAppContext } from '../../context/context'
 
-export default function Home(props) {
+export default function Home() {
 
     const [items, setItems] = useState([])
     const [subcategory, setSubcategory] = useState(null)
-    const [reload, setReload] = useState(true)
 
-    const { categorys } = useAppContext()
-  
-    const params = useParams()
-
+    const { categorys, search, load } = useAppContext()
+   
     useEffect(() => {
-        if (params.search) {
-            searchByName(params.search)
+        if (search.length) {
+            searchByName(search)
         } else {
             getApi()
         }
     }// eslint-disable-next-line
-        , [reload])
+        , [search, load])
 
     async function getApi() {
         const references = await getAllReferences()
@@ -36,18 +32,16 @@ export default function Home(props) {
     }
 
     async function searchByName(search) {
+        console.log(search)
         const searchResult = await searchByNameApi(search)
         setItems(searchResult)
 
-    }
-    function reloaded() {
-        setReload(!reload)
     }
 
     return (
         <div className="home">
             <PageBase
-                nav={<NavBar reload={reloaded} />}
+                nav={<NavBar/>}
                 filter={<FiltaerBar items={categorys} filterAction={filterBySubcategoryId} />}
                 body={<Body filter={subcategory} filterItem='subcategoryId' references={items} />} />
         </div>

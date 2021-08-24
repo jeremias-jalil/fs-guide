@@ -6,7 +6,9 @@ const appContext = createContext()
 export function AppContextProvider(props) {
     const [userAcces, setUserAcces] = useState(false)
     const [categorys, setCategorys] = useState([])
-  
+    const [search, setSearch] = useState('')
+    const [load, setLoad] = useState(true)
+    console.log(search)
 
     useEffect(() => {
         getCategoryApi()
@@ -21,14 +23,32 @@ export function AppContextProvider(props) {
         setUserAcces(status)
     }
 
+    function getSearch(data) {
+        setSearch(data)
+        
+    }
+
+    function resetSearch() {
+        setSearch('')
+    }
+
+    function reload() {
+        setLoad(!load)
+    }
+
 
     const value = useMemo(() => {
         return ({
             userAcces,
             authorization,
-            categorys
-        })
-    }, [userAcces,categorys])
+            categorys,
+            search,
+            getSearch,
+            resetSearch,
+            load,
+            reload
+        })// eslint-disable-next-line
+    }, [userAcces, categorys, search, load])
 
     return <appContext.Provider value={value} {...props} />
 }

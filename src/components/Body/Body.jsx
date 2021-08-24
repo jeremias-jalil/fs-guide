@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useAppContext } from '../../context/context';
-
-import { LinkPreview } from '@dhaiwat10/react-link-preview';
+import LinkPrev from '../LinkPrev/LinkPrev';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,7 +37,7 @@ export default function Body({ filter, filterItem, references, reload }) {
             <h1>{filter?.name}</h1>
             <div className="row">
                 {currentList.map(ref =>
-                    <div className="col-sm-4">
+                    <div className="col-12">
                         <div class="card" style={{ width: '98%' }}>
                             <div class="card-header">
                                 <div class="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
@@ -49,9 +48,9 @@ export default function Body({ filter, filterItem, references, reload }) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style={{ width: 'width: 18rem' }}>
                                 {ref.public === 'pending' ? <h5 class="card-title">{ref.name}</h5> : <></>}
-                                <LinkPreview url={ref.link} width='100%' descriptionLength='150' key={ref.id} textAlign='right' />
+                                <LinkPrev img={ref.image} title={ref.title} description={ref.short} url={ref.link} />
                                 {ref.public === 'pending' ? <p class="card-text">{ref.description}</p> : <></>}
                             </div>
                         </div>
