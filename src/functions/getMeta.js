@@ -24,6 +24,12 @@ export async function fetchData(url) {
         if(!data.img){
             data.img=logo
         }
+        if(!data.title){
+            data.title=""
+        }
+        if(!data.description){
+            data.description=""
+        }
         return (data)
     }
     else {

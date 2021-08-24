@@ -33,12 +33,7 @@ export function AppContextProvider(props) {
     }
 
     function reload(value) {
-        if (value) {
-            setLoad(value)
-        } else {
-            setLoad(!load)
-        }
-
+         setLoad(value)
     }
 
 

@@ -23,7 +23,7 @@ export default function Forms({ categorys }) {
 
     async function setMeta() {
         const meta = await fetchData(referenceInfo.link)
-        setReferenceInfo({ ...referenceInfo, image: meta.img, title: meta.title, short: meta.description.substring(0, 150) + '...' })
+        setReferenceInfo({ ...referenceInfo, image: meta.img, title: meta.title, short: meta.description?.substring(0, 150) + '...' })
     }
 
     useEffect(() => {

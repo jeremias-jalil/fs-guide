@@ -23,14 +23,16 @@ export default function Body({ filter, filterItem, references }) {
         // eslint-disable-next-line
     }, [filter, references, load])
 
-    function acept(id) {
-        updateReference({ "public": 'acept' }, id, userAcces)
-        reload()
+    async function acept(id) {
+        reload(true)
+        await updateReference({ "public": 'acept' }, id, userAcces,reload)
+        reload(false)
     }
 
-    function reyect(id) {
-        updateReference({ "public": "deleted" }, id, userAcces)
-        reload()
+    async function reyect(id) {
+        reload(true)
+        await updateReference({ "public": "deleted" }, id, userAcces)
+        reload(false)
     }
 
     return (
@@ -54,7 +56,7 @@ export default function Body({ filter, filterItem, references }) {
                             </div>
                             <div class="card-body" style={{ width: 'width: 18rem' }}>
                                 {ref.public === 'pending' ? <h5 class="card-title">{ref.name}</h5> : <></>}
-                                <LinkPrev img={ref.image} title={ref.title} description={ref.short} url={ref.link} />
+                                <LinkPrev img={ref.image} title={ref.title} short={ref.short} url={ref.link} name={ref.name} description={ref.description} />
                                 {ref.public === 'pending' ? <p class="card-text">{ref.description}</p> : <></>}
                             </div>
                         </div>

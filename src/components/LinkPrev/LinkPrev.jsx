@@ -1,7 +1,7 @@
 import React from 'react'
 import loadingGif from '../../loading.gif'
 
-export default function LinkPrev({ img, title, description, url }) {
+export default function LinkPrev({ img, title, short, url, name, description }) {
 
     return (
         <div className="card">
@@ -11,8 +11,8 @@ export default function LinkPrev({ img, title, description, url }) {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">{title}</h5>
-                        <p className="card-text">{description}</p>
+                        <h5 className="card-title">{title || name}</h5>
+                        <p className="card-text">{short || description}</p>
                         <a href={url} target='_blank' className="btn btn-primary" rel="noreferrer">Visitar página</a>
                     </div>
                 </div>
