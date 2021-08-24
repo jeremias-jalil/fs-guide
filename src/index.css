@@ -66,3 +66,7 @@ code {
   background-color:darkslategray;
 }
 
+.FilterReset:hover{
+  cursor:pointer;
+  color:#00a8ff
+}

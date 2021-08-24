@@ -15,6 +15,7 @@ export default function FiltaerBar({ items, filterAction }) {
                 <div class="collapse navbar-collapse " id="navbarScroll">
                     <div className='content'>
                         <h2>Categorías</h2>
+                        <h4 className="FilterReset" onClick={()=>filterAction(null)}>Borrar filtros</h4>
                         {items?.map((e) => (
                             <FilterIcon title={e.name} list={e.subcategories} iconConverter={getIconCategory} filterAction={filterAction} />
                         ))}

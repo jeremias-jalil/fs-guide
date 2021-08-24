@@ -7,6 +7,7 @@ import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { updateReference } from '../../functions/api';
+import Empti from '../Empti/Empti';
 
 export default function Body({ filter, filterItem, references, reload }) {
 
@@ -35,6 +36,7 @@ export default function Body({ filter, filterItem, references, reload }) {
     return (
         <div className="container">
             <h1>{filter?.name}</h1>
+            {!currentList.length? <Empti/> :
             <div className="row">
                 {currentList.map(ref =>
                     <div className="col-12">
@@ -56,7 +58,7 @@ export default function Body({ filter, filterItem, references, reload }) {
                         </div>
                     </div>
                 )}
-            </div>
+            </div>}
         </div>
     )
 }
