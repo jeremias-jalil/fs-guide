@@ -39,7 +39,7 @@ export default function Body({ filter, filterItem, references }) {
         <div className="container">
             <h1>{filter?.name}</h1>
             {load? 
-            <img src={loadingGif}  class="rounded mx-auto d-block"/>
+            <img src={loadingGif}  class="rounded mx-auto d-block" alt="loadGif"/>
             :!currentList.length? <Empti/> :
             <div className="row">
                 {currentList.map(ref =>

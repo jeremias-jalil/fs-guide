@@ -1,4 +1,4 @@
-import { faDatabase, faFileCode, faLaptopCode, faGlobe, faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase, faFileCode, faLaptopCode, faGlobe, faDotCircle,faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function getIconCategory(list) {
@@ -44,9 +44,15 @@ const categoryIcons = [
         icon: faGlobe
     },
     {
-        id: '4',
+        id: 4,
         name: "Others",
         icon: faDotCircle
+    }
+    ,
+    {
+        id: 5,
+        name: "Profile",
+        icon: faUserTie
     }
 ]
 

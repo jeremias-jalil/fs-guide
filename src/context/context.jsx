@@ -15,7 +15,11 @@ export function AppContextProvider(props) {
     }, [])
 
     async function getCategoryApi() {
-        const categorys = await getAllCategorys()
+        let categorys = await getAllCategorys()
+        const others = categorys.find(e=>e.name==="Others")
+        categorys = categorys.filter(e=>e.name !=="Others" )
+        categorys.push(others)
+        
         setCategorys(categorys)
     }
 
@@ -33,7 +37,7 @@ export function AppContextProvider(props) {
     }
 
     function reload(value) {
-         setLoad(value)
+        setLoad(value)
     }
 
 

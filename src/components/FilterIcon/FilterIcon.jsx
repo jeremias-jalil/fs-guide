@@ -11,7 +11,13 @@ export default function FilterIcon({ title, list, iconConverter, filterAction}) 
     
     useEffect(() => {
         if (iconConverter) {
-            setIco(iconConverter(list))
+            console.log(list,"pre")
+            let iconSubc = iconConverter(list)
+            const others = iconSubc.find(e=>e.name==="Others")
+            iconSubc = iconSubc.filter(e=>e.name !=="Others" )
+            iconSubc.push(others)    
+            console.log(iconSubc,"post")      
+            setIco(iconSubc)
         }// eslint-disable-next-line
     },[])
     
