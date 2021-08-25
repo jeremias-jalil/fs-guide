@@ -35,7 +35,7 @@ export default function LoginForm() {
                     <div className="mb-3">
                         <button type='submit' className="btn btn-primary">Login</button>
                     </div>
-                    {fail ? <div class="alert alert-danger" role="alert">
+                    {fail ? <div className="alert alert-danger" role="alert">
                         Usuario o contraseña incorrectas
                     </div> : ""}
                 </form>

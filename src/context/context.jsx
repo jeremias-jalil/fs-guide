@@ -8,7 +8,6 @@ export function AppContextProvider(props) {
     const [categorys, setCategorys] = useState([])
     const [search, setSearch] = useState('')
     const [load, setLoad] = useState(true)
-    console.log(search)
 
     useEffect(() => {
         getCategoryApi()

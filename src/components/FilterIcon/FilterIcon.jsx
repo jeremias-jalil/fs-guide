@@ -11,12 +11,12 @@ export default function FilterIcon({ title, list, iconConverter, filterAction}) 
     
     useEffect(() => {
         if (iconConverter) {
-            console.log(list,"pre")
+
             let iconSubc = iconConverter(list)
             const others = iconSubc.find(e=>e.name==="Others")
             iconSubc = iconSubc.filter(e=>e.name !=="Others" )
             iconSubc.push(others)    
-            console.log(iconSubc,"post")      
+  
             setIco(iconSubc)
         }// eslint-disable-next-line
     },[])
@@ -52,7 +52,7 @@ export default function FilterIcon({ title, list, iconConverter, filterAction}) 
             }
             <div className={style.listIcon}>
                 {ico?.map(p => (
-                    <div key={p.id} onClick={() => filterActionHandle(p)} className={parseInt(p.id) === parseInt(select) ? style.iconSelected : style.icon}>
+                    <div key={`div${p.id}`} onClick={() => filterActionHandle(p)} className={parseInt(p.id) === parseInt(select) ? style.iconSelected : style.icon}>
                         <FontAwesomeIcon icon={p.icon} key={p.id} />
                         <em> {p.name}</em>
                     </div>)

@@ -30,10 +30,10 @@ export default function NavBar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="nav-link active" to="/home" onClick={() => home()}>Inicio </NavLink>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="nav-link active" to="/newreference">Aportar</NavLink>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <NavLink className="nav-link" activeClassName="nav-link active" to="/admin">Administrar</NavLink>
                         </li>
                     </ul>

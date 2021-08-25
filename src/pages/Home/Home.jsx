@@ -29,8 +29,6 @@ export default function Home() {
         reload(false)
     }
 
-    console.log(categorys)
-
     function filterBySubcategoryId(id) {
         setSubcategory(id)
     }

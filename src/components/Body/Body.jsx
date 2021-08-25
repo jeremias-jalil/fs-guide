@@ -46,17 +46,17 @@ export default function Body({ filter, filterItem, references }) {
         <div className="container" >
             <h1>{filter?.name}</h1>
             {load? 
-            <img src={loadingGif}  class="rounded mx-auto d-block" alt="loadGif"/>
+            <img src={loadingGif}  className="rounded mx-auto d-block" alt="loadGif"/>
             :!currentList.length? <Empti/> :
             <Masonry breakpointCols={breakpoints}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
 
                 {currentList.map(ref =>
-                    <div >
-                        <div class="card" style={{ width: '98%' }}>
-                            <div class="card-header">
-                                <div class="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
+                    <div key={ref.id}>
+                        <div className="card" style={{ width: '98%' }}>
+                            <div className="card-header">
+                                <div className="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
                                 <div>
                                     <div >
                                         {userAcces ? <FontAwesomeIcon className="ok" icon={faCheckCircle} onClick={() => acept(ref.id)} /> : ""}
@@ -64,10 +64,10 @@ export default function Body({ filter, filterItem, references }) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body" style={{ width: 'width: 18rem' }}>
-                                {ref.public === 'pending' ? <h5 class="card-title">{ref.name}</h5> : <></>}
+                            <div className="card-body" style={{ width: 'width: 18rem' }}>
+                                {ref.public === 'pending' ? <h5 className="card-title">{ref.name}</h5> : <></>}
                                 <LinkPrev img={ref.image} title={ref.title} short={ref.short} url={ref.link} name={ref.name} description={ref.description} />
-                                {ref.public === 'pending' ? <p class="card-text">{ref.description}</p> : <></>}
+                                {ref.public === 'pending' ? <p className="card-text">{ref.description}</p> : <></>}
                             </div>
                         </div>
                     </div>
