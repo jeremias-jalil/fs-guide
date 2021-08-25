@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Masonry from 'react-masonry-css'
 
 import LinkPrev from '../LinkPrev/LinkPrev';
 import { useAppContext } from '../../context/context';
@@ -35,15 +36,24 @@ export default function Body({ filter, filterItem, references }) {
         reload(false)
     }
 
+    const breakpoints={
+        default:3,
+        1100:2,
+        700:1
+    }
+
     return (
-        <div className="container">
+        <div className="container" >
             <h1>{filter?.name}</h1>
             {load? 
             <img src={loadingGif}  class="rounded mx-auto d-block" alt="loadGif"/>
             :!currentList.length? <Empti/> :
-            <div className="row">
+            <Masonry breakpointCols={breakpoints}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column">
+
                 {currentList.map(ref =>
-                    <div className="col-12 col-md-6 col-lg-4 col-xxl-3">
+                    <div >
                         <div class="card" style={{ width: '98%' }}>
                             <div class="card-header">
                                 <div class="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
@@ -62,7 +72,9 @@ export default function Body({ filter, filterItem, references }) {
                         </div>
                     </div>
                 )}
-            </div>}
+
+            </Masonry>}
+
         </div>
     )
 }
