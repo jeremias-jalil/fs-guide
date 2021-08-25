@@ -43,7 +43,7 @@ export default function Body({ filter, filterItem, references }) {
             :!currentList.length? <Empti/> :
             <div className="row">
                 {currentList.map(ref =>
-                    <div className="col-12">
+                    <div className="col-12 col-md-6 col-lg-4 col-xxl-3">
                         <div class="card" style={{ width: '98%' }}>
                             <div class="card-header">
                                 <div class="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
