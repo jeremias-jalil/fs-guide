@@ -28,12 +28,14 @@ export default function Forms({ categorys }) {
 
     useEffect(() => {
         setMeta()// eslint-disable-next-line
+        
     }, [referenceInfo.link])
 
     function setData(e) {
         let dataName = e.target.name
         let dataValue = e.target.value
         setReferenceInfo({ ...referenceInfo, [dataName]: dataValue })
+        console.log(referenceInfo.category)
     }
 
     function sendData(e) {
@@ -75,7 +77,7 @@ export default function Forms({ categorys }) {
                         <div className="col-md-3">
                             <select className="form-select form-select-lg mb-3" name="subcategory" onChange={(e) => setData(e)} required>
                                 <option selected>Subcategoría</option>
-                                {categorys[referenceInfo.category]?.subcategories.map(e => <option value={e.id}>{e.name}</option>)}
+                                {categorys.find(e=>e.id*1===referenceInfo.category*1)?.subcategories.map(e => <option value={e.id}>{e.name}</option>)}
                             </select>
                         </div>
                         <div className="col-md-6">
