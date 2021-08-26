@@ -1,5 +1,5 @@
 import React, { useState, createContext, useMemo, useContext, useEffect } from 'react'
-import { getAllCategorys } from '../functions/api'
+import { getAllCategorys, getAportant } from '../functions/api'
 
 const appContext = createContext()
 
@@ -8,6 +8,7 @@ export function AppContextProvider(props) {
     const [categorys, setCategorys] = useState([])
     const [search, setSearch] = useState('')
     const [load, setLoad] = useState(true)
+    const [aportants, setAportants] = useState([])
 
     useEffect(() => {
         getCategoryApi()
@@ -15,10 +16,13 @@ export function AppContextProvider(props) {
 
     async function getCategoryApi() {
         let categorys = await getAllCategorys()
-        const others = categorys.find(e=>e.name==="Others")
-        categorys = categorys.filter(e=>e.name !=="Others" )
+        const others = categorys.find(e => e.name === "Others")
+        categorys = categorys.filter(e => e.name !== "Others")
         categorys.push(others)
-        
+        let getAportnt = await getAportant()
+        console.log(getAportnt)
+        setAportants(getAportnt.data)
+
         setCategorys(categorys)
     }
 
@@ -49,9 +53,10 @@ export function AppContextProvider(props) {
             getSearch,
             resetSearch,
             load,
-            reload
+            reload,
+            aportants
         })// eslint-disable-next-line
-    }, [userAcces, categorys, search, load])
+    }, [userAcces, categorys, search, load, aportants])
 
     return <appContext.Provider value={value} {...props} />
 }

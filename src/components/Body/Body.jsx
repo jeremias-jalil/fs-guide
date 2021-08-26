@@ -13,7 +13,7 @@ import Empti from '../Empti/Empti';
 export default function Body({ filter, filterItem, references }) {
 
     const [currentList, setCurrentList] = useState([])
-    const { userAcces, load, reload } = useAppContext()
+    const { userAcces, load, reload, aportants } = useAppContext()
 
     useEffect(() => {
         if (filter) {
@@ -56,7 +56,7 @@ export default function Body({ filter, filterItem, references }) {
                     <div key={ref.id}>
                         <div className="card" style={{ width: '98%' }}>
                             <div className="card-header">
-                                <div className="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} />{ref.user}</div>
+                                <div className="github" onClick={() => window.open(`https://github.com/${ref.user}`, '_blank')}><FontAwesomeIcon icon={faGithub} /> {ref.user}</div>
                                 <div>
                                     <div >
                                         {userAcces ? <FontAwesomeIcon className="ok" icon={faCheckCircle} onClick={() => acept(ref.id)} /> : ""}
@@ -74,7 +74,16 @@ export default function Body({ filter, filterItem, references }) {
                 )}
 
             </Masonry>}
-
+            <div className='card'>
+                <div class="card-header">
+                    Colaboradores
+                </div>
+                <ul class="list-group list-group-flush">
+                    {aportants?.map((e) => (
+                        <div class="list-group-item github" onClick={() => window.open(`https://github.com/${e.user}`, '_blank')} key={e.user}><FontAwesomeIcon icon={faGithub} /> {e.user}</div>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

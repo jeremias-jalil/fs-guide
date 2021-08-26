@@ -106,3 +106,15 @@ export async function loginUser(data) {
     }
 
 }
+
+
+export async function getAportant() {
+
+    try {
+        const aportants = await axios.get(`${BACK_SERVER}/aportants`)
+        return aportants
+    } catch (err) {
+        throw err
+    }
+
+}
