@@ -9,7 +9,7 @@ require('dotenv').config()
 
 ReactDOM.render(
 
-    <BrowserRouter basename="/fs-guide">
+    <BrowserRouter >
       <AppContextProvider >
         <App />
       </AppContextProvider>
