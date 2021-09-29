@@ -1,4 +1,5 @@
 import logo from '../logo-oscuro.png'
+import axios from 'axios'
 
 const isValidUrl = (url) => {
     const regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
@@ -6,21 +7,18 @@ const isValidUrl = (url) => {
     return validUrl
 }
 
-const api = 'https://lpdg.herokuapp.com/parse/link'
+const BACK_SERVER =process.env.REACT_APP_BACK_SERVER || "http://localhost:3010"
 
 
 export async function fetchData(url) {
-    const fetch = window.fetch
+  
     if (isValidUrl(url)) {
-        const response = await fetch(api, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ url })
-        })
-        const data = await response.json()
+  
+        try {
+            const metadataApi = await axios.post(`${BACK_SERVER}/metadata`,{url:url})
+            const data=metadataApi.data
+            console.log(data)
+
         if(!data.img){
             data.img=logo
         }
@@ -31,6 +29,11 @@ export async function fetchData(url) {
             data.description=""
         }
         return (data)
+ 
+        } catch (err) {
+            throw err
+        }
+
     }
     else {
         return {img:"",title:"",description:""}
