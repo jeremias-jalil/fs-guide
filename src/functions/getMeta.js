@@ -17,8 +17,6 @@ export async function fetchData(url) {
         try {
             const metadataApi = await axios.post(`${BACK_SERVER}/metadata`,{url:url})
             const data=metadataApi.data
-            console.log(data)
-
         if(!data.img){
             data.img=logo
         }

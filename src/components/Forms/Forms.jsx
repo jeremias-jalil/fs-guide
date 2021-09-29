@@ -35,7 +35,6 @@ export default function Forms({ categorys }) {
         let dataName = e.target.name
         let dataValue = e.target.value
         setReferenceInfo({ ...referenceInfo, [dataName]: dataValue })
-        console.log(referenceInfo.category)
     }
 
     function sendData(e) {
