@@ -20,7 +20,7 @@ export function AppContextProvider(props) {
         categorys = categorys.filter(e => e.name !== "Others")
         categorys.push(others)
         let getAportnt = await getAportant()
-        console.log(getAportnt)
+        
         setAportants(getAportnt.data)
 
         setCategorys(categorys)

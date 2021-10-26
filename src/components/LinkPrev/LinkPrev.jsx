@@ -7,7 +7,7 @@ export default function LinkPrev({ img, title, short, url, name, description }) 
         <div className="card">
             <div className="row g-0">
                 <div className="col-md-12">
-                    <img src={!img.length ? loadingGif : img} className="card-img-top img-fluid rounded mx-auto d-block" alt={title} onClick={() => { window.open(url, '_blank') }} style={{ height: '200px', width: 'auto' }}/>
+                    <img src={!img.length ? loadingGif : img} loading="lazy" className="card-img-top img-fluid rounded mx-auto d-block" alt={title} onClick={() => { window.open(url, '_blank') }} style={{ height: '200px', width: 'auto' }}/>
                 </div>
                 <div className="col-md-12">
                     <div className="card-body">
